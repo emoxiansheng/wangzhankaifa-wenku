@@ -1,0 +1,42 @@
+.borderLeft{
+  border-left: 1px solid #c0c0c0;
+  position: absolute;
+  left: 3px;
+  top: 15px;
+  height: 20px;
+}
+.cart{
+  width: 500px;max-height: 300px; overflow-y: auto;
+}
+.colorBlock{
+  background-color: #ff6700;
+  width: 50px;
+  height: 50px;
+}
+.miLogo{
+  margin-top: -12px;
+}
+.secondDaoHang{
+  margin-left: 120px ;
+}
+ul{
+  list-style: none;
+  margin-left: -30px;
+}
+.cartImage{
+  width: 100px;
+  height: 100px;
+}
+#geRenZhongXin li{
+  margin-left: 30px;
+}
+a:hover{
+  text-decoration: none;
+  color: black;
+}
+a{
+  color: #757575;
+}
+.affix{
+  top:0;
+}

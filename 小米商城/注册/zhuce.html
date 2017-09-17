@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="zhuce.css">
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+  <script src="../dist/ben-di-cun-chu.js"></script>
+  <script src="../dist/jquery.min.js"></script>
+  <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+  <!--存储-->
+    <script>
+      $(document).ready(function() {
+        var ACCOUNT_KEY='account';
+        var user = store.get(ACCOUNT_KEY,{});
+        var login=user.isLogin;
+        console.log(login);
+      });
+      $(function () {
+  var ACCOUNT_KEY='account';
+  $('#zhuce').click(function () {
+    if(!sjhmyz()) return false;
+    if(random!=$('#yzcode').val()){
+      alert('验证码错误！');
+      return false;
+    }
+    var user = store.get(ACCOUNT_KEY,{});
+    user.tel = $('#tel').val();
+    store.update(ACCOUNT_KEY,user);
+    window.location.href='zhuce-denglu.html';
+  })
+});
+  </script>
+</head>
+<body>
+<div class="form form-group">
+  <div class="logo">
+    <img src="../首页/mi-logo.png" alt="">
+  </div>
+  <h1 class="text-center" style="padding-top: 40px">注册小米账号</h1>
+  <div class="row">
+    <div  class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <label >国家/地区
+      </label>
+      <div class="dropdown">
+        <button class="btna btn btn-default dropdown-toggle" type="button" id="Menu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true"  style="width:435px;height: 34px;text-align: left;">
+          中国
+        </button>
+        <p class="help-block">成功注册后，国家/地区将不能被修改</p>
+        <div class="csad dropdown-menu" aria-labelledby="Menu1" style="overflow-y: scroll;max-height: 150px;width:288px">
+
+        </div>
+      </div>
+      <div class="form-group" style="padding-top: 10px">
+        <label>手机号码</label>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <div class="dropdown">
+              <button class="btnb btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 60px;">
+                +86
+              </button>
+              <div class="casd dropdown-menu"> </div>
+            </div>
+          </div>
+          <div>
+            <input  id="tel" style="height: 33px;width: 370px">
+            <div id="tel-tip"></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding-top: 10px">
+        <label >手机验证码
+        </label>
+        <form method="post" name="myform">
+          <input id="yzcode" type="text" name="usr_name" minlength="6" maxlength="20" style="width: 302px;height: 33px">
+          <input id="btns" type="button" class="button" value="获取手机验证码"  name="phone" onclick="showtime(60)" minlength="4" maxlength="4" style="height: 33px"><br>
+          <div id="ohno"></div>
+        </form>
+        <div class="btn-wrap">
+          <button id="zhuce" type="button" class="btn su-btn btn-warning btn-lg btn-block" style="margin-top: 40px;">立即注册</button>
+        </div>
+        <p>注册账号即表示同意并愿意遵守小米注册账号即表示同意并愿意遵守小米<a href="#">用户协议</a>和<a href="#">隐私政策</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--短信验证码-->
+<script>
+  var random=0;
+  $('#btns').click(function () {
+    if(!sjhmyz()) return false;
+    random=four(Math.round(Math.random()*9999));
+    console.log(random.toString());
+    var param = {
+      no:random.toString()
+    };
+    $.ajax({
+      url: 'http://sms.market.alicloudapi.com/singleSendSms',
+      type: 'GET',
+      dataType: 'json',
+      data: {
+      ParamString:JSON.stringify(param),
+        RecNum:$('#tel').val(),
+        SignName: "火一样的叶",
+        TemplateCode: 'SMS_94990005'
+    },
+    headers: {
+      Authorization: 'APPCODE 2f19f14e316c4a99ae63b180fe07f322'
+    }
+  }).done(function (data) {
+      console.log(random,data);
+    });
+    console.log(random);
+  });
+  function four(num){
+    var str=num.toString();
+    var len=str.length;
+    if(len<4){
+      for(var i=0;i<4-len;i++){
+        str='0'+str;
+      }
+    }
+   return str;
+  }
+</script>
+<!--倒计时-->
+<script>
+  function showtime(t){
+    if(!sjhmyz()) return false;
+    document.myform.phone.disabled=true;
+    for(i=1;i<=t;i++) {
+      window.setTimeout("update_p(" + i + ","+t+")", i * 1000);
+    }
+  }
+  function update_p(num,t) {
+    if(num == t) {
+      document.myform.phone.value =" 重新发送 ";
+      document.myform.phone.disabled=false;
+    }
+    else {
+      printnr = t-num;
+      document.myform.phone.value = " (" + printnr +")秒后重新发送";
+    }
+  }
+</script>
+<script>
+ function  sjhmyz() {
+    var number=$('#tel').val();
+    if(number==''){
+      document.getElementById('tel-tip').innerHTML='不能为空';
+      document.getElementById('tel-tip').style.color='red';
+      document.getElementById('tel').style.border='1px solid red';
+      return false
+    }
+    if(!/^1[0-9]{10}$/.test(number)){
+      document.getElementById('tel-tip').innerHTML='手机号码不正确';
+      document.getElementById('tel-tip').style.color='red';
+      document.getElementById('tel').style.border='1px solid red';
+      return false;
+    }
+    else{
+      document.getElementById('tel-tip').innerHTML='手机号码正确';
+      document.getElementById('tel-tip').style.color='green';
+      document.getElementById('tel').style.border='1px solid green';
+      return true
+    }
+  }
+</script>
+<script>
+//  拼接
+  $(function () {
+    $.getJSON('../dist/country.json', function (data) {
+      var html = '';
+      for (category in data) {
+        html += '<div class="alert alert-warning">' + category + '</div>';
+        html += '<div class="list-group">';
+        for (var i = 0, len = data[category].length; i < len; i++) {
+          html += '<a class="list-group-item" href="#">' + data[category][i].C + '</a>'
+        }
+        html += '</div>'
+      }
+      $('.csad').html(html);
+    });
+    $('.csad').on('click', 'a', function () {
+      $('.btna')[0].innerText = $(this)[0].innerText;
+    });
+  });
+  $(function () {
+    $.getJSON('../dist/country.json', function (data) {
+      var item = '';
+      for (category in data) {
+        item += '<div class="alert alert-warning">' + category + '</div>';
+        item += '<div class="list-group">';
+        for (var i = 0, len = data[category].length; i < len; i++) {
+          item += '<a class="list-group-item" href="#">' + '<span>' + data[category][i].C + '</span>' + '<span style="float: right">' + data[category][i].N+ '</span></a>'
+        }
+        item += '</div>'
+      }
+      $('.casd').html(item );
+    });
+    $('.casd').on('click', 'a', function () {
+      $('.btnb')[0].innerText = $(this).children().eq(1)[0].innerText;
+    });
+  })
+</script>
+</body>
+</html>

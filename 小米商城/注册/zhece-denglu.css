@@ -1,0 +1,49 @@
+.toubu{
+  margin: 0 auto;
+  background-color: white;
+  width: 650px;
+  height: 666px;
+}
+.logo{
+  width: 50px;
+  margin: 0 auto;
+  background-color: rgb(255,103,2);
+  text-align: center;
+}
+.fangkuang{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 350px;
+  height: 468px;
+}
+.fangkuang-1{
+  margin-top: 50px ;
+  width: 350px;
+}
+.cs {
+  color: rgb(255,103,2);
+}
+#username{
+  margin: 15px 0;
+  width: 350px;
+  height: 40px;
+}
+#psword{
+  margin: 15px 0;
+  width: 350px;
+  height: 40px;
+}
+#password{
+  margin: 15px 0;
+  width: 350px;
+  height: 40px;
+}
+#tijiao{
+  color: white;
+}
+button{
+  background-color:rgb(255,103,2);
+  width: 350px;
+  height: 40px;
+  border: 1px solid rgb(255,103,2);
+}

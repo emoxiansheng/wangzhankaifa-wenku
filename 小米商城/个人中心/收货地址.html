@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收货地址</title>
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="收货地址.css">
+  <script src="../dist/jquery.js"></script>
+  <script src="../bootstrap/dist/js/bootstrap.js"></script>
+  <script src="../local.js"></script>
+</head>
+<body>
+<!--头部-->
+<nav class="navbar navbar-inverse" style="margin-bottom: 30px;">
+  <div class="container hao">
+    <ul class="nav navbar-nav">
+      <li><a href="#">小米商城</a></li>
+      <li><a href="#">MIUI</a></li>
+      <li><a href="#">米聊</a></li>
+      <li><a href="#">游戏</a></li>
+      <li><a href="#">多看阅读</a></li>
+      <li><a href="#">云服务</a></li>
+      <li><a href="#">金融</a></li>
+      <li><a href="#">小米商城手机版</a></li>
+      <li><a href="#">问题反馈</a></li>
+      <li><a href="#">SelectRegion</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          小米123 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="个人中心.html">个人中心</a></li>
+          <li><a href="评价晒单.html">评价晒单</a></li>
+          <li><a href="#">我的喜欢</a></li>
+          <li><a href="../小米账号/小米账户.html">小米账户</a></li>
+          <li><a href="../首页/zjm.html">退出登录</a></li>
+        </ul>
+      </li>
+      <li><a href="../注册/zhuce.html">注册</a></li>
+      <li><a href="#">消息通知</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="hover"><span class="glyphicon glyphicon-shopping-cart">购物车(0)</span></a>
+        <div class="dropdown-menu dropdown-menu-right cart">
+          <table>
+            <thead>
+            <tr style="text-align: center;font-size: 20px"><td>商品</td><td>名称</td><td>单价</td><td>操作</td></tr>
+            </thead>
+            <tbody class="row">
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar bai-1">
+  <div class="container">
+    <a class="navbar-brand wide" href="#">
+      <img class="mi" src="../首页/mi-logo.png" alt="">
+    </a>
+    <div id="navContent" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav" style="margin-top: 5px">
+        <li><a href="#">全部商品分类</a></li>
+        <li><a href="#">小米手机</a></li>
+        <li><a href="#">红米</a></li>
+        <li><a href="#">平板•笔记本</a></li>
+        <li><a href="#">电视</a></li>
+        <li><a href="#">盒子•影音</a></li>
+        <li><a href="#">路由器</a></li>
+        <li><a href="#">智能硬件</a></li>
+        <li><a href="#">服务</a></li>
+        <li><a href="#">社区</a></li>
+      </ul>
+      <form class="navbar-form navbar-right right-1">
+        <div class="form-group">
+          <div class="input-group input-group-lg">
+            <input class="form-control" type="text" placeholder="红米Nate5A     小米Max2" style="border-radius: 0">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="button" style="border-radius: 0">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="container text-left right-1">
+    <ul class="breadcrumb">
+      <li><a href="../首页/zjm.html">首页</a></li>
+      <li class="active">个人中心</li>
+    </ul>
+  </div>
+</div>
+<div class="site-header container">
+  <div class="row">
+    <!--左侧-->
+    <div class="col-lg-2 col-md-2" style="background-color: white;padding: 0">
+      <div class="uc-box uc-sub-box">
+        <div class="uc-nav-box">
+          <div class="box-hd">
+            <h3 class="title">订单中心</h3>
+          </div>
+          <div class="box-bd">
+            <ul class="uc-nav-list">
+              <li><a href="#">我的订单</a></li>
+              <li><a href="#">意外保</a></li>
+              <li><a href="#">团购订单</a></li>
+              <li><a href="../小米账号/小米账户.html">评价晒单</a></li>
+              <li><a href="#">话费充值订单</a></li>
+              <li><a href="#">以旧换新订单</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="uc-nav-box">
+          <div class="box-hd">
+            <h3 class="title">个人中心</h3>
+          </div>
+          <div class="box-bd">
+            <ul class="uc-nav-list">
+              <li class="active"><a class="cs" href="个人中心.html">我的个人中心</a></li>
+              <li><a href="#">消息通知</a></li>
+              <li><a href="#">购买资格</a></li>
+              <li><a href="#">现金账户</a></li>
+              <li><a href="#">小米礼品卡</a></li>
+              <li><a href="#">现金券</a></li>
+              <li><a href="#">喜欢的商品</a></li>
+              <li><a href="#">优惠券</a></li>
+              <li class="nav nav-tabs"><a href="#fifteen" data-toggle="tab"  data-target="#fifteen">收货地址</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="uc-nav-box">
+          <div class="box-hd">
+            <h3 class="title">售后服务</h3>
+          </div>
+          <div class="box-bd">
+            <ul class="uc-nav-list">
+              <li><a href="#">服务记录</a></li>
+              <li><a href="#">申请服务</a></li>
+              <li><a href="#">领取快递报销</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="uc-nav-box">
+          <div class="box-hd">
+            <h3 class="title">账户管理</h3>
+          </div>
+          <div class="box-bd">
+            <ul class="uc-nav-list">
+              <li><a href="#">个人信息</a></li>
+              <li><a href="#">修改密码</a></li>
+              <li><a href="#">社区VIP认证</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--收货地址-->
+    <div class="col-lg-10 col-md-10">
+      <div id="fifteen" class="tab-pane fade">
+        <h3>收货地址</h3>
+        <div class="row">
+          <div class="add">
+            <button  class="text-center" style="margin: 5px;;width: 295px;height: 180px;border: 1px solid #e0e0e0;float: left" data-toggle="modal" data-target="#myModal">
+              <span class="glyphicon glyphicon-plus-sign" style="height: 30px;width: 30px;font-size: 30px" ></span>
+              <p style="font-size: 20px">添加新地址</p>
+            </button>
+          </div>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" id="myModal" style="margin-left: 300px">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>添加收货地址</h3>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">姓名：</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control inputName" >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-4 control-label">手机号码：</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control inputPhone" >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">选择省份 / 城市 / 地区</label>
+                    <div class="col-sm-8">
+                      <select  class="provinceID" name="province" >
+                        <option >请选择省份</option>
+                        <option>北京市</option>
+                        <option>北京市</option>
+                        <option>北京市</option>
+                      </select>
+                      <select  class="cityID" name="city">
+                        <option>请选择城市</option>
+                        <option>中关村</option>
+                        <option>中关村</option>
+                        <option>中关村</option>
+                      </select>
+                      <select class="countryID" name="country">
+                        <option>请选择地区</option>
+                        <option>硅谷</option>
+                        <option>硅谷</option>
+                        <option>硅谷</option>
+                      </select>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-4 control-label">详细地址</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control inputAddress" >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-4 control-label">邮政编码</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control inputZipcode">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <div class="col-sm-8">
+                  <button type="button"  class="btn save" style="background:rgb(250,104,4)" data-dismiss="modal">保存</button>
+                  <button type="button"  class="btn btn-default" style="margin-left: 50px;background:#b0b0b0" data-dismiss="modal">取消</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" id="myModall" style="margin-left: 300px">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>添加收货地址</h3>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputNam" class="col-sm-4 control-label">姓名：</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputNam" >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPhone" class="col-sm-4 control-label">手机号码：</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputPhone" >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">选择省份 / 城市 / 地区</label>
+                    <div class="col-sm-8">
+                      <select  id="provinceI" name="province" >
+                        <option >请选择省份</option>
+                        <option>省份1</option>
+                        <option>省份2</option>
+                        <option>省份3</option>
+                      </select>
+                      <select  id="cityI" name="city">
+                        <option>请选择城市</option>
+                        <option>城市1</option>
+                        <option>城市2</option>
+                        <option>城市3</option>
+                      </select>
+                      <select id="countryI" name="country">
+                        <option>请选择地区</option>
+                        <option>地区1</option>
+                        <option>地区2</option>
+                        <option>地区3</option>
+                      </select>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddres" class="col-sm-4 control-label">详细地址</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputAddres" >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputZipcod" class="col-sm-4 control-label">邮政编码</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputZipcod">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <div class="col-sm-8">
+                  <button type="button"  class="xiugai es btn" style="background:rgb(250,104,4)" data-dismiss="modal">保存</button>
+                  <button type="button"  class="btn btn-default" style="margin-left: 50px;background:#b0b0b0" data-dismiss="modal">取消</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+<!--底部-->
+<div class="container">
+  <div class="row">
+        <div class="col-lg-10 dibu3">
+              <div class="col-lg-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+                <span class="glyphicon glyphicon-wrench"> 预约维修服务</span>
+              </div>
+              <div class="col-lg-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+                <span class="glyphicon glyphicon-wrench"> 7天无理由退货</span>
+              </div>
+              <div class="col-lg-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+                <span class="glyphicon glyphicon-wrench"> 15天免费换货</span>
+              </div>
+              <div class="col-lg-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+                <span class="  glyphicon glyphicon-briefcase"> 满150元包邮</span>
+              </div>
+       </div>
+       <div class="col-lg-2">
+          <span class="glyphicon glyphicon-map-marker dibu4">520余家售后网点</span>
+       </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="ysx">
+      <div class="col-lg-10">
+        <div class="sx">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="p5">帮助中心</div>
+              <div class="p6">账户管理</div>
+              <div class="p6">购物指南</div>
+              <div class="p6">订单操作</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">服务支持</div>
+              <div class="p6">售后政策</div>
+              <div class="p6">自助服务</div>
+              <div class="p6">相关下载</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">线下门店</div>
+              <div class="p6">小米之家</div>
+              <div class="p6">服务网点</div>
+              <div class="p6">零售网点</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">关于小米</div>
+              <div class="p6">了解小米</div>
+              <div class="p6">加入小米</div>
+              <div class="p6">联系我们</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">关注我们</div>
+              <div class="p6">新浪微博</div>
+              <div class="p6">小米部落</div>
+              <div class="p6">官方微信</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">特色服务</div>
+              <div class="p6">F码通道</div>
+              <div class="p6">礼物码</div>
+              <div class="p6">防伪查询</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2" style="margin-top: 50px">
+        <div class="shuzi text-center">
+          400-100-5678
+        </div>
+        <div class="p7 text-center">
+          周一至周日 8：00-18：00
+        </div>
+        <div class="p7 text-center">
+          (仅收市话费)
+        </div>
+        <button type="button" class="btn btn-warning anniu"><span class="glyphicon glyphicon-earphone">24小时在线服务</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="zhongse">
+  <div class="container">
+    <div class="row">
+      <img class="mi top1 navbar-left" src="../首页/mi-logo.png" alt="">
+      <div class="dibu1 nav navbar-nav">
+        <a class="dibu2" href="#">小米商城</a><span class="sep">|</span>
+        <a class="dibu2" href="#">MIUI</a><span class="sep">|</span>
+        <a class="dibu2" href="#">米聊</a><span class="sep">|</span>
+        <a class="dibu2" href="#">多看书城</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米路由器</a><span class="sep">|</span>
+        <a class="dibu2" href="#">视频电话</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米天猫店</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米淘宝直营</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米网盟</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米移动</a><span class="sep">|</span>
+        <a class="dibu2" href="#">隐私政策</a><span class="sep">|</span>
+        <a class="dibu2" href="#">SelectRegion</a><span class="sep">|</span>
+      </div>
+    </div>
+    <div class="dibuwenzi">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号
+      违法和不良信息举报电话：1850-130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
+  </div>
+  <div class="container right1">
+    <img src="../image/底部1.png" alt="">
+    <img src="../image/底部2.png" alt="">
+    <img src="../image/底部3.png" alt="">
+    <img src="../image/底部4.png" alt="">
+  </div>
+  <div class="text-center di-bu">探索黑科技，小米为发烧而生！</div>
+</div>
+<!--表单验证-->
+<script>
+  $(function () {
+    $(".user").mouseover(function () {
+      $(".dropdown-menu-right").show();
+      $('.user').css('backgroundColor','white');
+      $('#user').css('color','#ff6700')
+    });
+    $(".user").mouseout(function () {
+      $(".dropdown-menu-right").hide();
+      $('.user').css('backgroundColor','#333');
+      $('#user').css('color','white')
+    });
+  });
+  $(function () {
+    $(".shop").mouseover(function () {
+      $(".shops").show();
+      $('.news').css('backgroundColor','white');
+      $('.news').css('color','#ff6700')
+    });
+
+    $(".shop").mouseout(function () {
+      $(".shops").hide();
+      $('.news').css('backgroundColor','#333');
+      $('.news').css('color','white')
+    });
+  });
+</script>
+<script>
+  var addressList=store.get('USER_KEY',[]);
+  console.log(addressList);
+  //-----------------------------------------------页面初始化
+  var html='';
+  for(var i=0;i<addressList.length;i++){
+    html += '<div class="text-center" data-num="'+addressList[i].myId+'" style="margin: 5px;;width: 295px;height: 180px;border: 1px solid #e0e0e0;float: left">' +
+      '<p>'+ addressList[i].myName +'</p> ' +
+      '<p>'+ addressList[i].myPhone +'</p> ' +
+      '<p>'+ addressList[i].myProvinceCC +''+ addressList[i].cityID +''+ addressList[i].countryID +'</p> ' +
+      '<p>'+ addressList[i].myAddressXX +'</p> ' +
+      '<p>'+ addressList[i].myZipcode +'</p> '+
+      ' <p> <button class=" change text-success"  style="background:rgb(204,104,4)" data-toggle="modal" data-target="#myModall">修改</button>'+
+      '<button  class="shanchu" style="margin-left: 20px; background:#b0b0b0">删除</button></p></div>';
+  }
+  $('.add').append(html);
+  //---------------------------------------------添加收货地址
+  $('.save').click(function () {
+    if( $('.inputName').val() ==''
+      || $('.inputPhone').val() ==''
+      ||$('.provinceID').val()=='请选择省份'
+      ||$('.cityID').val()=='请选择城市'
+      ||$('.countryID').val()=='请选择地区'
+      || $('.inputAddress').val() ==''
+      || $('.inputZipcode').val() ==''){
+      alert('请将信息填写完整！');
+      return false
+    }
+    if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test($('.inputPhone').val())) ){
+      alert('手机号码格式不正确');
+      return false
+    }
+    else{
+      var name =  $('.inputName').val();
+      var phone =  $('.inputPhone').val();
+      var provinceCC =  $('.provinceID').val();
+      var cityID  =   $('.cityID').val() ;
+      var countryID=  $('.countryID').val();
+      var addressXX =  $('.inputAddress').val();
+      var zipcode =  $('.inputZipcode').val();
+      //---------------------------------------------设置数据
+      var id=1;
+      if(addressList.length>0){
+        id=addressList[addressList.length-1].id+1;
+      }
+      var address={
+        "myId":id,
+        "myName":name,
+        "myPhone":phone,
+        "myProvinceCC":provinceCC,
+        "cityID":cityID,
+        "countryID":countryID,
+        "myAddressXX":addressXX,
+        "myZipcode":zipcode
+      };
+
+      //------------------------------------添加数据到数组
+      addressList.push(address);
+      //--------------------------------------向本地存储添加地址
+      store.update('USER_KEY',addressList);
+      //--------------------------------------向页面添加地址框
+      var html = '';
+      html += '<div class="text-center" data-num="'+address.myId+'" style="margin:5px;width: 295px;height: 180px;border: 1px solid #e0e0e0;float: left">' +
+        '<p>'+ address.myName +'</p>' +
+        ' <p>'+ address.myPhone +'</p>' +
+        ' <p>'+ address.myProvinceCC +''+ address.cityID +''+ address.countryID +'</p>' +
+        ' <p>'+ address.myAddressXX +'</p>' +
+        ' <p>'+ address.myZipcode +'</p>' +
+        ' <p><button class="text-success change"  style="background:rgb(204,104,4)" data-toggle="modal" data-target="#myModall">修改</button>' +
+        '<button  class="shanchu" style="margin-left: 20px; background:#b0b0b0">删除</button></p></div>';
+      $('.add').append(html);
+      return true;
+    }
+  });
+  //---------------------------------------------删除地址数据
+  $('.add').on('click','.shanchu',function () {
+    var id= $(this).parent().parent().data('num');
+    if(confirm('确认要删除吗？')){
+      $(this).parent().parent().remove();
+      for(var i=0;i<addressList.length;i++){
+        if(addressList[i].myId==id){
+          addressList.splice(i,1);
+          break;
+        }
+      }
+    }
+    //--------------------------------------重新上传数据
+    store.update('USER_KEY',addressList);
+  });
+  $('.add').on('click','.change',function () {
+    var id= $(this).parent().parent().data('num');
+    for(var i=0;i<addressList.length;i++) {
+      if (addressList[i].myId == id) {
+        address = addressList[i];
+        break;
+      }
+    }
+    $('#inputNam').val(address.myName);
+    $('#inputPhon').val(address.myPhone);
+    $('#provinceI>option:checked').text(address.myProvinceCC);
+    $('#cityI>option:checked').text(address.cityID);
+    $('#countryI>option:checked').text(address.countryID);
+    $('#inputAddres').val(address.myAddressXX);
+    $('#inputZipcod').val(address.myZipcode);
+    console.log(address);
+  });
+
+  $('.xiugai').click(function () {
+    if ($('.inputNam').val() == ''
+      || $('.inputPhon').val() == ''
+      || $('.provinceI>option:checked').text() == '请选择省份'
+      || $('.cityI>option:checked').text() == '请选择城市'
+      || $('.countryI>option:checked').text() == '请选择地区'
+      || $('.inputAddres').val() == ''
+      || $('.inputZipcod').val() == '') {
+      alert('请将信息填写完整！');
+      return false
+    }
+    if (!(/^1[3|5|8][0-9]\d{4,8}$/.test($('#inputPhon').val()))) {
+      alert('手机号码格式不正确');
+      return false
+    }
+    else {
+      address.myName = $('#inputNam').val();
+      address.myPhone = $('#inputPhon').val();
+      address.myProvinceCC= $('#provinceI').val();
+      address.cityID = $('#cityI').val();
+      address.countryI = $('#countryI').val();
+      address.myAddressXX = $('#inputAddres').val();
+      address.myZipcode = $('#inputZipcod').val();
+      var html = '';
+      html += '<div class="text-center" data-num="'+address.myID+'" style="margin:0;width: 265px;height: 180px;border: 1px solid #e0e0e0;float: left">';
+      html += '<p>'+  address.myName +'</p>';
+      html += '<p>'+ address.myPhone +'</p>';
+      html += '<p>'+ address.myProvince + address.myCity + address.myCountry +'</p>';
+      html += '<p>'+ address.myAddressXX +'</p>';
+      html += '<p>'+ address.myZipcode +'</p>';
+      html += '<p><button  class="text-success change" style="background:rgb(204,104,4)" data-toggle="modal" data-target="#myModall" >修改</button>' +
+        '<button  class="shanchu"  style="margin-left: 20px; background:#b0b0b0">删除</button></p></div>';
+      $('[data-num='+address.myID+']').html(html);
+    }
+  })
+</script>
+</body>
+</html>

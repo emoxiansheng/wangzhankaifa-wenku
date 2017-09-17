@@ -1,0 +1,38 @@
+[
+  {
+    "id":1,
+    "image":"image/小米手机.jpg",
+     "name":"小米手机",
+     "price":"￥2299",
+     "button":"&times"
+  },
+  {
+    "id":2,
+    "image":"image/小米电视.jpg",
+    "name":"小米电视",
+    "price":"￥6999",
+    "button":"&times"
+  },
+  {
+    "id":3,
+    "image":"image/小米代步车.jpg",
+    "name":"小米代步车",
+    "price":"￥12999",
+    "button":"&times"
+  },
+  {
+    "id":4,
+    "image":"image/小米电饭煲.jpg",
+    "name":"小米电饭煲",
+    "price":"￥999",
+    "button":"&times"
+  },
+  {
+    "id":5,
+    "image":"image/小米盒子.jpg",
+    "name":"小米盒子",
+    "price":"￥3999",
+    "button":"&times"
+  }
+]
+

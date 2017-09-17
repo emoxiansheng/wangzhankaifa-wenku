@@ -1,0 +1,257 @@
+a{
+  color: rgb(216,216,215);
+}
+form .btn:hover{
+  background-color:#ff6700 ;
+}
+.mi{
+  background-color:#ff6700;
+}
+.wide{
+  width: 345px;
+  padding: 5px 15px;
+}
+.site-ad-bar{
+  background: url("1.jpg") no-repeat center;
+  height: 100px;
+}
+.site-header{
+  margin-top: 10px;
+  line-height: 60px;
+  font-size: 10px;
+}
+li{
+  color: white;
+  list-style: none;
+  font-size: 18px ;
+}
+.container{
+  width: 1500px;
+}
+table{
+  width: 600px;
+  text-align: center;
+  color: black;
+}
+.navbar .nav > li .dropdown-menu {
+  margin: 0;
+}
+.navbar .nav > li:hover .dropdown-menu {
+  display: block;
+}
+body{
+  background-color:white;
+}
+.bai{
+  background-color: white;
+}
+.p1{
+  padding: 30px 15px;
+  font-size: 17px;
+}
+.p2{
+  padding: 10px 15px;
+  color: #5f5f5f;
+}
+.p3{
+  margin-top: -24px;
+  margin-right: 15px; ;
+}
+.p4{
+  padding: 10px 15px;
+  font-size: 17px;
+}
+.p5{
+  font-size: 18px;
+  margin: 30px 0;
+  color: black;
+}
+.p6{
+  margin-top: 15px;
+  color: #5f5f5f;
+}
+.p6{
+  margin-top: 10px;
+  color: #5f5f5f;
+}
+.dibu{
+  padding-bottom: 70px;
+}
+.zhongse{
+  background-color:#f5f5f5;
+  margin-top: 30px;
+}
+.shuzi{
+  margin-top: 20px;
+  font-size: 30px;
+  color: #ff6700;
+}
+.anniu{
+  margin-top: 25px;
+  margin-left: 50px;
+  border: 1px solid #ff6700;
+  background-color: white;
+  color:#ff6700;
+}
+.ysx{
+  margin-top: 80px;
+  border-bottom: 1px solid rgb(216,216,215);
+}
+.sx{
+  margin-top: 50px;
+  border-right: 1px solid rgb(216,216,215);
+}.top1{
+   width: 70px;
+   height: 70px;
+   margin-top: 35px;
+ }
+.dibu1{
+  margin-top:40px;
+  margin-left: 15px;
+}
+.dibu2{
+  padding: 5px;
+  color: black;
+  font-size: 15px;
+}
+.sep{
+  margin: 0;
+  font-family: sans-serif;
+}
+.dibuwenzi{
+  width: 946px;
+  margin-top: -40px;
+  margin-left: 70px;
+}
+.right1{
+  width: 480px;
+  margin-left: 1035px;
+  margin-top: -65px;
+}
+.di-bu{
+  padding: 50px;
+  font-size: 30px;
+  color:rgb(216,216,215) ;
+}
+.geshi-1{
+  margin-top: 17px;
+  margin-right: 8px;
+  margin-left: 14px;
+  font-size: 15px
+}
+.geshi-2{
+  margin-top: -55px;
+  padding: 0;
+  border: 1px solid #3f5a54;
+}
+.geshi-3{
+  margin-left: 50px;
+  height: 20px;
+  line-height: 8px;
+  background-color: white;
+  color: #ff6700;
+  border: 1px solid #ff6700;
+}
+.b li img{
+  padding: 15px 30px;
+}
+.b li a{
+ color: black;
+  font-size: 12px;
+}
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-right: 15px;
+  font-size: 15px;
+}
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  height: 33px;
+  margin-right: 11px;
+}
+.col-lg-3 ul{
+  background-color: #3f5a54;
+  height: 417px;
+}
+li .G4{
+  margin-top: -65px;
+  margin-left: 520px;
+  color: #00AA00;
+  font-size: 13px;
+}
+li .G5{
+  font-size: 13px;
+  margin-top: -60px;
+  margin-left: 580px;
+  color:black;
+}
+.fuchu{
+  background-color: white;
+  box-shadow: 1px 2px 1px #888888;
+  border: 1px solid #f2eeee;
+  width: 1455px;
+  height:229px;
+  margin-top: 70px;
+  margin-left: -15px;
+  color: black;
+  z-index: 99;
+  position: absolute;
+}
+.fuchu-1{
+  padding: 0 5px;
+  width: 160px;
+  height: 229px;
+}
+.b{
+  background-color: white;
+  box-shadow: 1px 2px 1px #888888;
+  border: 1px solid #f2eeee;
+  width: 750px;
+  height: 417px;
+  margin-top: -427px;
+  margin-left: 345px;
+  color: black;
+  z-index: 99;
+  position: absolute;
+  display: none;
+}
+.glyphicon-menu-right{
+  color: white;
+  margin-left: 190px;
+}
+.biao-1{
+  margin: 0 auto 20px;
+  text-align: center;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  color: #ff6700;
+  border: 1px solid #ff6700;
+}
+.biao-2{
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color:black;
+}
+.biao-3{
+  font-size: 13px;
+  text-align: center;
+  color: #ff6700 ;
+}
+.biao-4{
+  margin: 0 auto 20px;
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  color: #ff6700;
+  border-top: 1px solid #00CCFF;
+  border-right: 1px solid #ff6700;
+  border-left: 1px solid #ff6700;
+  border-bottom: 1px solid #ff6700;
+}

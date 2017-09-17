@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册-登录</title>
+  <link rel="stylesheet" href="zhece-denglu.css">
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+  <script src="../dist/ben-di-cun-chu.js"></script>
+  <script src="../dist/jquery.js"></script>
+  <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #f5f5f5">
+<div class="toubu">
+  <div class="fangkuang">
+      <div class="logo">
+        <img src="../首页/mi-logo.png" alt="">
+      </div>
+      <h1 class="text-center" style="padding-top: 40px">注册小米账号</h1>
+      <div class="fangkuang-1">
+              <h4>请设置您的用户名和密码：</h4>
+              <input id="username" type="text" name="username" placeholder="请输入用户名">
+              <p id="error"></p>
+              <input  id="psword" type="text" name="userpswd" placeholder="请输入密码">
+              <span id="ip" class="error"></span>
+              <input id="password" type="text" name="confpswd" maxlength="16" placeholder="请输入确认密码">
+              <span id="ib" class="error"></span>
+              <span id="in" class="error"></span>
+              <p>密码长度8~16位、数字、字母、字符至少包含两种</p>
+              <button id="tijiao" type="submit">提交</button>
+      </div>
+  </div>
+</div>
+<!--拼接-->
+<script>
+  $(function () {
+    $.getJSON('country.json', function (data) {
+      var html = '';
+      for (category in data) {
+        html += '<div class="alert alert-warning">' + category + '</div>';
+        html += '<div class="list-group">';
+        for (var i = 0, len = data[category].length; i < len; i++) {
+          html += '<a class="list-group-item" href="#">' + data[category][i].C + '</a>'
+        }
+        html += '</div>'
+      }
+      $('.csad').html(html);
+    });
+    $('.csad').on('click', 'a', function () {
+      $('.btna')[0].innerText = $(this)[0].innerText;
+    });
+  });
+  $(function () {
+    $.getJSON('country.json', function (data) {
+      var item = '';
+      for (category in data) {
+        item += '<div class="alert alert-warning">' + category + '</div>';
+        item += '<div class="list-group">';
+        for (var i = 0, len = data[category].length; i < len; i++) {
+          item += '<a class="list-group-item" href="#">' + '<span>' + data[category][i].C + '</span>' + '<span style="float: right">' + data[category][i].N+ '</span></a>'
+        }
+        item += '</div>'
+      }
+      $('.casd').html(item );
+    });
+    $('.casd').on('click', 'a', function () {
+      $('.btnb')[0].innerText = $(this).children().eq(1)[0].innerText;
+    });
+  })
+</script>
+<script>
+//  保存、点击
+  $('#tijiao').click(function () {
+    if(!mimayz())return false;
+    if ($('#psword').val()!=$('#password').val()){
+      $('#ip').html('验证码与确认密码不一致');
+      return false;
+    }
+      else if($('#psword').val()==''){
+      $('#ip').html('密码为空');
+      return false;
+    }
+    else {
+    var ACCOUNT_KEY='account';
+      var account={
+        username:$('#username').val(),
+        password:$('#password').val()
+      };
+      store.update('account',account);
+      window.location.replace('../登录/zhucedenglu.html')
+    }
+  });
+</script>
+<!--验证-->
+<script>
+  function  mimayz() {
+    var number=$('#username').val();
+    if(number==''){
+      document.getElementById('error').innerHTML='不能为空';
+      document.getElementById('error').style.color='red';
+      document.getElementById('username').style.border='1px solid red';
+      return false
+    }
+    if(!/^1[0-9]{10}$/.test(number)){
+      document.getElementById('error').innerHTML='手机号码不正确';
+      document.getElementById('error').style.color='red';
+      document.getElementById('username').style.border='1px solid red';
+      return false;
+    }
+    else{
+      document.getElementById('error').innerHTML='手机号码正确';
+      document.getElementById('error').style.color='green';
+      document.getElementById('username').style.border='1px solid green';
+      return true
+    }
+  }
+</script>
+</body>
+</html>

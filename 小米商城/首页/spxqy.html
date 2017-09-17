@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>商品详情页</title>
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../商品详情页/spxqy.css">
+  <script src="../dist/ben-di-cun-chu.js"></script>
+  <script src="../dist/jquery.js"></script>
+  <script src="../bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+<script>
+  $(document).ready(function() {
+    var ACCOUNT_KEY='account';
+    var user = store.get(ACCOUNT_KEY,{});
+    var login=user.isLogin;
+    console.log(login);
+    if(login==true){
+      $('#zhuangtai-2').show();
+      $('#zhuangtai-1').hide();
+      $('#zhuangtai-3').hide();
+    }else{
+      $('#zhuangtai-2').hide();
+      $('#zhuangtai-1').show();
+      $('#zhuangtai-3').show();
+    }
+  });
+  $(function () {
+    $('#tuichu').on('click',function () {
+      $('#zhuangtai-2').hide();
+      $('#zhuangtai-1').show();
+      $('#zhuangtai-3').show();
+      store.remove('account')
+    });
+  });
+  $('[data-toggle=hover]').parent().on('mouseenter mouseleave',function () {
+    $(this).toggleClass("open")
+  });
+
+  $(function () {
+    var tsconfigs=[];
+    $.getJSON('tsconfig.json',function (data) {
+      tsconfigs=data;
+      console.log(data);var html="";
+      for (var i = 0; i < tsconfigs.length; i++) {
+        html+='<tr>';
+        html+= '<td class="col-lg-4"> <img src=' + tsconfigs[i].image + '/> </td>';
+        html+= '<td class="col-lg-4">' + tsconfigs[i].name + '</td>';
+        html+= '<td class="col-lg-2">' + tsconfigs[i].price + '</td>';
+        html+= '<td class="col-lg-2">' + tsconfigs[i].button + '</td>';
+        html+='</tr>';
+        $('tbody').html(html);
+      }
+    });
+    var enterTimeout=[],leaveTimeout = [];
+    $(document).off('click.bs.collapse.data-api','[data-toggle="collapse"]');
+    $('[data-collapse-trigger=hover]').hover(function () {
+      var i=$(this);
+      var index =Number(i.data('id'));
+      console.log(index);
+      clearTimeout(leaveTimeout[index]);
+      clearTimeout(enterTimeout[index]);
+      enterTimeout[index]=setTimeout(function(){
+        var target = i.data('target');
+        console.log(target);
+        $(target).collapse('show');
+      },350);
+
+      //$(this).trigger('click');
+
+    },function(){
+      var i=$(this);
+      var index =Number(i.data('id'));
+      clearTimeout(enterTimeout[index]);
+      clearTimeout(leaveTimeout[index]);
+      leaveTimeout[index]=setTimeout(function(){
+        var target = i.data('target');
+        $(target).collapse('hide');
+      },350);
+    })
+
+  });
+</script>
+<nav class="navbar navbar-inverse" style="margin-bottom: 10px;">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><a href="#">小米商城</a></li>
+      <li><a href="#">MIUI</a></li>
+      <li><a href="#">米聊</a></li>
+      <li><a href="#">游戏</a></li>
+      <li><a href="#">多看阅读</a></li>
+      <li><a href="#">云服务</a></li>
+      <li><a href="#">金融</a></li>
+      <li><a href="#">小米商城手机版</a></li>
+      <li><a href="#">问题反馈</a></li>
+      <li><a href="#">SelectRegion</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a id="zhuangtai-1" href="../登录/denglu.html">登录</a></li>
+      <li id="zhuangtai-2" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          小米123 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="../个人中心/个人中心.html">个人中心</a></li>
+          <li><a href="../个人中心/评价晒单.html">评价晒单</a></li>
+          <li><a href="#">我的喜欢</a></li>
+          <li><a href="../小米账号/小米账户.html">小米账户</a></li>
+          <li><a id="tuichu" href="#">退出登录</a></li>
+        </ul>
+      </li>
+      <li><a id="zhuangtai-3" href="../注册/zhuce.html">注册</a></li>
+      <li><a href="#">消息通知</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="hover"><span class="glyphicon glyphicon-shopping-cart">购物车(0)</span></a>
+        <div class="dropdown-menu dropdown-menu-right cart">
+          <table>
+            <thead>
+            <tr style="text-align: center;font-size: 20px"><td>商品</td><td>名称</td><td>单价</td><td>操作</td></tr>
+            </thead>
+            <tbody class="row">
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar" style="margin-bottom: 10px">
+  <div class="container">
+    <a class="navbar-brand wide" href="#">
+      <img class="mi" src="mi-logo.png" alt="">
+    </a>
+    <form class="navbar-form navbar-right" style="position: relative">
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <input class="form-control" type="text" style="border-radius: 0;position: relative">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="button" style="border-radius: 0;">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="navContent" class="navbar-collapse collapse">
+      <a class="nav navbar-nav geshi-1" data-id="0" data-collapse-trigger="hover" data-target="#collapseExample"
+         data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="">
+        小米手机
+      </a>
+      <ul class="nav navbar-nav" style="margin-top: 8px">
+        <li><a href="#">红米</a></li>
+        <li><a href="#">平板•笔记本</a></li>
+        <li><a href="#">电视</a></li>
+        <li><a href="#">盒子•影音</a></li>
+        <li><a href="#">路由器</a></li>
+        <li><a href="#">智能硬件</a></li>
+        <li><a href="#">服务</a></li>
+        <li><a href="#">社区</a></li>
+      </ul>
+      <div class="collapse" id="collapseExample">
+        <div class="row fuchu">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-lg-2 fuchu-1">
+                <div class="biao-1">新品</div>
+                <img class="img-responsive" src="../image/头1.png" alt="">
+                <div class="biao-2">小米MIX2</div>
+                <div class="biao-3">3299起</div>
+              </div>
+              <div class="col-lg-2 fuchu-1">
+                <div class="biao-1">新品</div>
+                <img class="img-responsive" src="../image/头2.png" alt="">
+                <div class="biao-2">小米MIX2</div>
+                <div class="biao-3">3299起</div>
+              </div>
+              <div class="col-lg-2 fuchu-1">
+                <div class="biao-1" style="border: white"></div>
+                <img class="img-responsive" src="../image/头3.png" alt="">
+                <div class="biao-2">小米MIX2</div>
+                <div class="biao-3">3299起</div>
+              </div>
+              <div class="col-lg-2 fuchu-1">
+                <div class="biao-4">享多重优惠</div>
+                <img class="img-responsive" src="../image/头2.png" alt="">
+                <div class="biao-2">小米MIX2</div>
+                <div class="biao-3">3299起</div>
+              </div>
+              <div class="col-lg-2 fuchu-1">
+                <div class="biao-1">新品</div>
+                <img class="img-responsive" src="../image/头3.png" alt="">
+                <div class="biao-2">小米MIX2</div>
+                <div class="biao-3">3299起</div>
+              </div>
+              <div class="col-lg-2 fuchu-1">
+                <div class="biao-4">下单立减600</div>
+                <img class="img-responsive" src="../image/头1.png" alt="">
+                <div class="biao-2">小米MIX2</div>
+                <div class="biao-3">3299起</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div id="J_proHeader" data-spy="affix" data-offset-top="150">
+    <div class="xm-product-box">
+      <div class="nav-bar" id="J_headNav">
+        <div class="container J_navSwitch">
+          <h2 class="J_proName">红米Note 5A 高配版</h2>
+          <div class="con">
+            <div class="left">
+            <span class="separator">|</span>
+            <a href="">标准版</a>
+          </div>
+            <div class="right">
+              <a href="" class="cur">概述</a>  <span class="separator">|</span>
+              <a href="../商品详情页/spxc.html">参数</a>  <span class="separator">|</span>
+              <a href="">图集</a>  <span class="separator">|</span>
+              <a href="" target="_blank">F码通道</a>  <span class="separator">|</span>
+              <a href="">用户评价</a>
+              <a href="" class="btn btn-small btn-warning">立即购买</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="site-ad-1 container-fluid">
+  <div class="sp">
+      <div class="sp-1">红米 Note  5A</div>
+      <div class="sp-2">高配版</div>
+      <div class="sp-3">1600万柔光自拍</div>
+      <div class="sp-4">5.5" 大屏/指纹识别/流畅8核处理器/</div>
+      <div class="sp-5">￥899起</div>
+  </div>
+</div>
+<div class="site-ad-2 container-fluid">
+  <div class="text-box">
+    <h2>
+      高清1600万像素<br>
+      更细腻的自拍质感
+    </h2>
+
+    <p>清晰的自拍相机与智能美颜组合，美化的同时保留自然真实的皮肤质感。</p>
+  </div>
+</div>
+<div class="site-ad-3 container-fluid">
+  <img class="img-responsive" src="../image/商品3.png" alt="">
+  <div class="text-box1">
+    <h2>
+      自拍柔光灯<br>
+      肌肤明亮，拍出眼神光
+    </h2>
+    <p>清晰的自拍相机与智能美颜组合，美化的同时保留自然真实的皮肤质感。</p>
+  </div>
+</div>
+<div class="site-ad-4 container-fluid">
+  <div class="text-box2">
+    <div class="text-box2-1">
+      <p>1600万像素相机<br>
+        采集更多画面信息</p>
+      <p>1600万像素相机<br>
+        采集更多画面信息</p>
+      <p>1600万像素相机<br>
+        采集更多画面信息</p>
+      <p>1600万像素相机<br>
+        采集更多画面信息</p>
+      <p>1600万像素相机<br>
+        采集更多画面信息</p>
+    </div>
+  </div>
+  <div class="text-box2-2">
+    <p>*以上为原理示意图，根据环境、光线略有不同</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row" style="margin-top: 80px">
+    <div class="col-lg-10 col-md-10">
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="glyphicon glyphicon-wrench"> 预约维修服务</span>
+      </div>
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="glyphicon glyphicon-wrench"> 7天无理由退货</span>
+      </div>
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="glyphicon glyphicon-wrench"> 15天免费换货</span>
+      </div>
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="  glyphicon glyphicon-briefcase"> 满150元包邮</span>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <span class="glyphicon glyphicon-map-marker" style="font-size:25px;">520余家售后网点</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="ysx">
+      <div class="col-lg-10 col-md-10">
+        <div class="sx">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="p5">帮助中心</div>
+              <div class="p6">账户管理</div>
+              <div class="p6">购物指南</div>
+              <div class="p6">订单操作</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">服务支持</div>
+              <div class="p6">售后政策</div>
+              <div class="p6">自助服务</div>
+              <div class="p6">相关下载</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">线下门店</div>
+              <div class="p6">小米之家</div>
+              <div class="p6">服务网点</div>
+              <div class="p6">零售网点</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">关于小米</div>
+              <div class="p6">了解小米</div>
+              <div class="p6">加入小米</div>
+              <div class="p6">联系我们</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">关注我们</div>
+              <div class="p6">新浪微博</div>
+              <div class="p6">小米部落</div>
+              <div class="p6">官方微信</div>
+            </div>
+            <div class="col-lg-2">
+              <div class="p5">特色服务</div>
+              <div class="p6">F码通道</div>
+              <div class="p6">礼物码</div>
+              <div class="p6">防伪查询</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2" style="margin-top: 50px">
+        <div class="shuzi text-center">
+          400-100-5678
+        </div>
+        <div class="p7 text-center">
+          周一至周日 8：00-18：00
+        </div>
+        <div class="p7 text-center">
+          (仅收市话费)
+        </div>
+        <button type="button" class="btn btn-warning anniu" style="margin-left: 40px"><span class="glyphicon glyphicon-earphone">24小时在线服务</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="zhongse">
+  <div class="container">
+    <div class="row">
+      <img class="mi top1 navbar-left" src="mi-logo.png" alt="">
+      <div class="dibu1 nav navbar-nav">
+        <a class="dibu2" href="#">小米商城</a><span class="sep">|</span>
+        <a class="dibu2" href="#">MIUI</a><span class="sep">|</span>
+        <a class="dibu2" href="#">米聊</a><span class="sep">|</span>
+        <a class="dibu2" href="#">多看书城</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米路由器</a><span class="sep">|</span>
+        <a class="dibu2" href="#">视频电话</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米天猫店</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米淘宝直营</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米网盟</a><span class="sep">|</span>
+        <a class="dibu2" href="#">小米移动</a><span class="sep">|</span>
+        <a class="dibu2" href="#">隐私政策</a><span class="sep">|</span>
+        <a class="dibu2" href="#">SelectRegion</a>
+      </div>
+    </div>
+    <div class="dibuwenzi">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号
+      违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
+  </div>
+  <div class="container right1">
+    <img src="../image/底部1.png" alt="">
+    <img src="../image/底部2.png" alt="">
+    <img src="../image/底部3.png" alt="">
+    <img src="../image/底部4.png" alt="">
+  </div>
+  <div class="text-center di-bu">探索黑科技，小米为发烧而生！</div>
+</div>
+</body>
+</html>

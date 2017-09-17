@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="denglu.css">
+  <script src="../dist/ben-di-cun-chu.js"></script>
+  <script src="../dist/jquery.js"></script>
+  <script src="../bootstrap/dist/js/bootstrap.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      var ACCOUNT_KEY='account';
+      var user = store.get(ACCOUNT_KEY,{});
+      var login=user.isLogin;
+      console.log(login);
+    });
+    $(function () {
+
+      $('#btns').click(function () {
+        var ACCOUNT_KEY='account';
+        var user = store.get(ACCOUNT_KEY,{});
+        user.username = $('#username').val();
+        user.password = $('#password').val();
+        store.update(ACCOUNT_KEY,user);
+        window.location.href='../首页/zjm.html';
+      })
+    });
+  </script>
+<!--  <script>
+    //修改密码
+    $(function () {
+      var ACCOUNT_KEY='account';
+      $('#btns').click(function () {
+        if(!mimayz())return false;
+        var user = store.get(ACCOUNT_KEY,{});
+
+        if($('#username1').val()!=account.username && $('#username2').val()!=account.password){
+          alert('adadad');
+            return false;
+        }
+      else {
+        store.update(ACCOUNT_KEY,user);
+        window.location.href='denglu.html';
+        }
+      })
+    });
+  </script>-->
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" style="margin-bottom: 10px;">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="wide" href="#">
+          <img class="mi" src="../首页/mi-logo.png" alt="">
+        </a>
+      </div>
+      <div class="geshi-2">
+        小米商城
+      </div>
+      <div class="geshi-1">
+        让每个人都能享受科技的乐趣
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="geshi-6">
+  <div class="geshi-5">
+  <div class="geshi-4">
+    <div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active  geshi-3 text-center"><a id="geshi-8" href="#home" aria-controls="home" role="tab" data-toggle="tab">账号登录</a></li>
+        <li role="presentation" class="geshi-3 geshi-8"><a id="geshi-9" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">扫码登录</a></li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div class="row">
+            <input class="item_account" type="text" name="user" id="username1"
+                   placeholder="    邮箱/手机号码/小米帐号">
+            <input class="item_account" type="text" name="user" id="username2"
+                   placeholder="    密码">
+          </div>
+          <button type="button" class="btn btn-warning btn-lg " style="margin-top: 40px;" id="btns">立即登录</button>
+          <ul class="row" style=" margin-left: -15px;">
+            <li class="col-lg-6 geshi-7 shuxian text-right"><a href="../注册/zhuce.html">注册小米账号</a></li>
+            <li class="col-lg-6 geshi-7 text-left" style="margin-left: 0"><a href="#">忘记密码？</a></li>
+          </ul>
+          <p class="text-center dibu">其他登录方式</p>
+          <div class="row" style="padding: 0">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"><a href="#"><img class="img1" src="../image/qq.png" alt=""></a></div>
+            <div class="col-lg-2"><a href="#"><img class="img1" src="../image/微信.png" alt=""></a></div>
+            <div class="col-lg-2"><a href="#"><img class="img1" src="../image/微博.png" alt=""></a></div>
+            <div class="col-lg-2"><a href="#"><img class="img1" src="../image/支付宝.png" alt=""></a></div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane geshi-3 text-center" id="profile">
+          <div class="tabs-con tabs_con" data-con="qr" style="display: block;">
+            <div>
+              <img id="ewm" src="../image/二维码.png" alt="">
+            </div>
+            <div class="ewm-1">
+              <div class="text-center">
+              使用<span>小米商城APP</span>扫一扫
+              </div>
+              请打开「设置 &gt; 小米帐号 &gt; 右上角扫一扫」扫码登录
+            </div>
+        </div>
+        </div>
+      </div>
+  </div>
+    </div>
+  </div>
+</div>
+    <div class="container text-center">
+      <ul class="breadcrumb">
+        <li><a href="#">简体</a></li>
+        <li><a href="#">繁体</a></li>
+        <li class="active"><a href="#">English</a></li>
+        <li class="active">常见问题</li>
+      </ul>
+    </div>
+  <p class="text-center"><span>小米公司版权所有-京ICP备10046444-<a class="beian-record-link" target="_blank" href="#">
+    <span><img src="../image/警察.png"></span>京公网安备11010802020134号</a>-京ICP证110507号</span></p>
+</body>
+</html>

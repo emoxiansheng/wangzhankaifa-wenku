@@ -1,0 +1,29 @@
+a img {
+  vertical-align: middle;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+.miHeader{
+  margin-top: 50px;
+}
+.downUp{
+  margin-top: 20px;
+}
+.miLogo{
+  margin-left: 90px;
+}
+.mainContent {
+  margin-top: 50px;
+}
+ul{
+  list-style: none;
+}
+li{
+  display: inline-block;
+}
+a:hover{
+  text-decoration: none;
+}
+.sv5 {
+  background-position: -160px 0;
+}

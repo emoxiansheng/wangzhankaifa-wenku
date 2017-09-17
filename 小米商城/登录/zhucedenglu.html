@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>denglu</title>
+</head>
+<script src="../dist/ben-di-cun-chu.js"></script>
+<script src="../dist/jquery.js"></script>
+<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+<body style="background-color: #16232B;">
+<div style="background-image:url(../小米账号/image/登录背景.jpg);width: 1130px;height: 588px;margin-left: 185px;margin-top: 80px">
+<button id="btns" type="button" style="margin-left: 780px;margin-top: 400px;width: 250px;
+font-size: 25px;background-color: blue;color: white;">登录</button>
+</div>
+<script>
+  $(document).ready(function() {
+    var ACCOUNT_KEY='account';
+    var user = store.get(ACCOUNT_KEY,{});
+    var login=user.isLogin;
+    console.log(login);
+  });
+  var ACCOUNT_KEY='account';
+  $('#btns').click(function () {
+    var user = store.get(ACCOUNT_KEY,{});
+    user.isLogin = true;
+    store.update(ACCOUNT_KEY,user);
+    window.location.href='../首页/zjm.html'
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="个人中心.css">
+  <script src="../dist/jquery.js"></script>
+  <script src="../bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body  onload="load()">
+<script>
+//时间验证
+  function load() {
+    var x="";
+    var time=new Date().getHours();
+    if (time<12)
+    {
+      x="早上好~";
+    }
+    else if(time<14){
+      x="中午好~";
+    }
+    else if(time<18){
+      x="下午好~";
+    }
+    else{
+      x="晚上好~";
+    }
+    document.getElementById("greet").innerHTML=x;
+  }
+</script>
+<!--导航栏1-->
+<nav class="navbar navbar-inverse" style="margin-bottom: 0;">
+
+  <div class="container">
+
+    <ul class="nav navbar-nav">
+      <li><a href="../首页/zjm.html">小米商城</a></li>
+      <li><a href="#">MIUI</a></li>
+      <li><a href="#">米聊</a></li>
+      <li><a href="#">游戏</a></li>
+      <li><a href="#">多看阅读</a></li>
+      <li><a href="#">云服务</a></li>
+      <li><a href="#">金融</a></li>
+      <li><a href="#">小米商城手机版</a></li>
+      <li><a href="#">问题反馈</a></li>
+      <li><a href="#">SelectRegion</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          小米123 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="个人中心.html">个人中心</a></li>
+          <li><a href="评价晒单.html">评价晒单</a></li>
+          <li><a href="#">我的喜欢</a></li>
+          <li><a href="../小米账号/小米账户.html">小米账户</a></li>
+          <li><a href="#">退出登录</a></li>
+        </ul>
+      </li>
+      <li><a href="#">消息通知</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="hover"><span class="glyphicon glyphicon-shopping-cart">购物车(0)</span></a>
+        <div class="dropdown-menu dropdown-menu-right cart">
+          <table>
+            <thead>
+            <tr style="text-align: center;font-size: 20px"><td>商品</td><td>名称</td><td>单价</td><td>操作</td></tr>
+            </thead>
+            <tbody class="row">
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--导航栏2-->
+<nav class="navbar bai-1">
+  <div class="container">
+      <a class="navbar-brand wide" href="#">
+        <img class="mi" src="../首页/mi-logo.png" alt="">
+      </a>
+    <div id="navContent" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav" style="margin-top: 5px">
+        <li><a href="#">全部商品分类</a></li>
+        <li><a href="#">小米手机</a></li>
+        <li><a href="#">红米</a></li>
+        <li><a href="#">平板•笔记本</a></li>
+        <li><a href="#">电视</a></li>
+        <li><a href="#">盒子•影音</a></li>
+        <li><a href="#">路由器</a></li>
+        <li><a href="#">智能硬件</a></li>
+        <li><a href="#">服务</a></li>
+        <li><a href="#">社区</a></li>
+      </ul>
+      <form class="navbar-form navbar-right right-1">
+        <div class="form-group">
+          <div class="input-group input-group-lg">
+            <input class="form-control" type="text" placeholder="红米Nate5A     小米Max2" style="border-radius: 0">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="button" style="border-radius: 0">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+  <div class="container text-left right-1">
+    <ul class="breadcrumb">
+      <li><a href="../首页/zjm.html">首页</a></li>
+      <li class="active">个人中心</li>
+    </ul>
+  </div>
+<!--整体布局-->
+<div class="site-header container">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 ps">
+        <div class="uc-box uc-sub-box">
+          <div class="uc-nav-box">
+            <div class="box-hd">
+              <h3 class="title">订单中心</h3>
+            </div>
+            <div class="box-bd">
+              <ul class="uc-nav-list">
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">意外保</a></li>
+                <li><a href="#">团购订单</a></li>
+                <li><a href="../小米账号/小米账户.html">评价晒单</a></li>
+                <li><a href="#">话费充值订单</a></li>
+                <li><a href="#">以旧换新订单</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="uc-nav-box">
+            <div class="box-hd">
+              <h3 class="title">个人中心</h3>
+            </div>
+            <div class="box-bd">
+              <ul class="uc-nav-list">
+                <li class="active"><a class="cs" href="个人中心.html">我的个人中心</a></li>
+                <li><a href="#">消息通知</a></li>
+                <li><a href="#">购买资格</a></li>
+                <li><a href="#">现金账户</a></li>
+                <li><a href="#">小米礼品卡</a></li>
+                <li><a href="#">现金券</a></li>
+                <li><a href="#">喜欢的商品</a></li>
+                <li><a href="#">优惠券</a></li>
+                <li><a href="收货地址.html">收货地址</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="uc-nav-box">
+            <div class="box-hd">
+              <h3 class="title">售后服务</h3>
+            </div>
+            <div class="box-bd">
+              <ul class="uc-nav-list">
+                <li><a href="#">服务记录</a></li>
+                <li><a href="#">申请服务</a></li>
+                <li><a href="#">领取快递报销</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="uc-nav-box">
+            <div class="box-hd">
+              <h3 class="title">账户管理</h3>
+            </div>
+            <div class="box-bd">
+              <ul class="uc-nav-list">
+                <li><a href="../小米账号/小米账户.html">个人信息</a></li>
+                <li><a href="#">修改密码</a></li>
+                <li><a href="#">社区VIP认证</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-10">
+      <div class="geshi-1">
+                    <img class="avatar" src="../image/头像.jpg">
+                    <a class=" geshi-2" href="个人中心.html">小米123</a>
+                    <p id="greet" class="geshi-3"></p>
+                    <a class="link" href="个人中心.html">修改个人信息 &gt;</a>
+      </div>
+      <ul class="avatar-1">
+                    <li>账户安全：<span class="cs">普通</span></li>
+                    <li>绑定手机：<span>132********50</span></li>
+                    <li>绑定邮箱：<button class="btn btn-warning right-2">绑定</button></li>
+                  </ul>
+      <div class="row bai gs">
+        <div class="col-lg-10 col-md-10">
+          <div class="col-lg-6 col-md-6">
+              <img class="avatar-2" src="../image/待支付.png">
+              <div class=" geshi-2-1" href="个人中心.html">待支付订单：<i class="cs">0</i></div>
+              <a class="link-1" href="个人中心.html">查看待支付订单 &gt;</a>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <img class="avatar-2" src="../image/待收货.png">
+            <div class=" geshi-2-1" href="个人中心.html">待支付订单：<i class="cs">0</i></div>
+            <a class="link-1" href="个人中心.html">查看待支付订单 &gt;</a>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <img class="avatar-2" src="../image/待评价.png">
+              <div class=" geshi-2-1" href="个人中心.html">待支付订单：<i class="cs">0</i></div>
+              <a class="link-1" href="个人中心.html">查看待支付订单 &gt;</a>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <img class="avatar-2" src="../image/喜欢.png">
+              <div class=" geshi-2-1" href="个人中心.html">待支付订单：<i class="cs">0</i></div>
+              <a class="link-1" href="个人中心.html">查看待支付订单 &gt;</a>
+            </div>
+          </div>
+</div>
+  </div>
+    </div>
+  </div>
+<!--底部1-->
+<div class="container">
+  <div class="row" style="margin-top: 80px;">
+    <div class="col-lg-10 col-md-10">
+      <div class="col-lg-3 col-md-3 gs-1">
+        <span class="glyphicon glyphicon-wrench"> 预约维修服务</span>
+      </div>
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="glyphicon glyphicon-wrench"> 7天无理由退货</span>
+      </div>
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="glyphicon glyphicon-wrench"> 15天免费换货</span>
+      </div>
+      <div class="col-lg-3 col-md-3" style="border-right: 1px solid rgb(216,216,215);font-size: 25px">
+        <span class="  glyphicon glyphicon-briefcase"> 满150元包邮</span>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <span class="glyphicon glyphicon-map-marker" style="font-size:25px;">520余家售后网点</span>
+    </div>
+  </div>
+</div>
+<!--底部2-->
+<div class="container">
+  <div class="row">
+    <div class="ysx">
+      <div class="col-lg-10 col-md-10">
+        <div class="sx">
+          <div class="row">
+            <div class="col-lg-2 col-md-2">
+              <div class="p5">帮助中心</div>
+              <div class="p6">账户管理</div>
+              <div class="p6">购物指南</div>
+              <div class="p6">订单操作</div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+              <div class="p5">服务支持</div>
+              <div class="p6">售后政策</div>
+              <div class="p6">自助服务</div>
+              <div class="p6">相关下载</div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+              <div class="p5">线下门店</div>
+              <div class="p6">小米之家</div>
+              <div class="p6">服务网点</div>
+              <div class="p6">零售网点</div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+              <div class="p5">关于小米</div>
+              <div class="p6">了解小米</div>
+              <div class="p6">加入小米</div>
+              <div class="p6">联系我们</div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+              <div class="p5">关注我们</div>
+              <div class="p6">新浪微博</div>
+              <div class="p6">小米部落</div>
+              <div class="p6">官方微信</div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+              <div class="p5">特色服务</div>
+              <div class="p6">F码通道</div>
+              <div class="p6">礼物码</div>
+              <div class="p6">防伪查询</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2" style="margin-top: 50px">
+        <div class="shuzi text-center">
+          400-100-5678
+        </div>
+        <div class="p7 text-center">
+          周一至周日 8：00-18：00
+        </div>
+        <div class="p7 text-center">
+          (仅收市话费)
+        </div>
+        <button type="button" class="btn btn-warning anniu"><span class="glyphicon glyphicon-earphone">24小时在线服务</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--底部3-->
+<div class="zhongse">
+      <div class="container">
+        <div class="row">
+          <img class="mi top1 navbar-left" src="../首页/mi-logo.png" alt="">
+          <div class="dibu1 nav navbar-nav">
+            <a class="dibu2" href="#">小米商城</a><span class="sep">|</span>
+            <a class="dibu2" href="#">MIUI</a><span class="sep">|</span>
+            <a class="dibu2" href="#">米聊</a><span class="sep">|</span>
+            <a class="dibu2" href="#">多看书城</a><span class="sep">|</span>
+            <a class="dibu2" href="#">小米路由器</a><span class="sep">|</span>
+            <a class="dibu2" href="#">视频电话</a><span class="sep">|</span>
+            <a class="dibu2" href="#">小米天猫店</a><span class="sep">|</span>
+            <a class="dibu2" href="#">小米淘宝直营</a><span class="sep">|</span>
+            <a class="dibu2" href="#">小米网盟</a><span class="sep">|</span>
+            <a class="dibu2" href="#">小米移动</a><span class="sep">|</span>
+            <a class="dibu2" href="#">隐私政策</a><span class="sep">|</span>
+            <a class="dibu2" href="#">SelectRegion</a><span class="sep">|</span>
+          </div>
+        </div>
+        <div class="dibuwenzi">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号
+          违法和不良信息举报电话：1850-130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
+      </div>
+      <div class="container right1">
+        <img src="../image/底部1.png" alt="">
+        <img src="../image/底部2.png" alt="">
+        <img src="../image/底部3.png" alt="">
+        <img src="../image/底部4.png" alt="">
+      </div>
+      <div class="text-center di-bu">探索黑科技，小米为发烧而生！</div>
+    </div>
+</body>
+</html>
